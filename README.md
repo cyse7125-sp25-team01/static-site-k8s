@@ -1,0 +1,1 @@
+# static-site-k8s
