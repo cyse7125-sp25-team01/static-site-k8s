@@ -1,0 +1,44 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignore IDE and editor settings
+
+## VS Code
+.vscode/
+
+## JetBrains (IntelliJ IDEA, PyCharm, WebStorm, etc.)
+.idea/
+*.iml
+out/
+
+## Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+## NetBeans
+nbproject/private/
+
+## Vim
+*.swp
+*.swo
+*.swn
+
+## Visual Studio
+.vs/
+*.user
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.cache
+
+## Other IDEs and text editors
+*.bak
+*.log
+*.tmp
