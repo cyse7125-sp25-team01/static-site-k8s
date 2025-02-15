@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static-site
+  namespace: static-site
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: static-site
+  template:
+    metadata:
+      labels:
+        app: static-site
+    spec:
+      containers:
+        - name: static-site
+          image: saimanasg/static-site:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          startupProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+      imagePullSecrets:
+        - name: dockerhub-image-pull-secret
