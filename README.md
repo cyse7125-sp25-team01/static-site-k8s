@@ -4,7 +4,7 @@ This repository contains Kubernetes manifest files to set up a namespace, deploy
 
 ## Files
 
-### `secrets.yaml`
+### `secret.yaml`
 
 This file contains the Docker credentials required to pull images from a private Docker registry.
 
