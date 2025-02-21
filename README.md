@@ -10,7 +10,7 @@ This file contains the Docker credentials required to pull images from Docker Hu
 
 ### `namespace.yaml`
 
-This file creates a Kubernetes namespace named `satic-site`.
+This file creates a Kubernetes namespace named `static-site`.
 
 ### `deployment.yaml`
 
